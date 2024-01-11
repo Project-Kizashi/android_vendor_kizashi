@@ -28,11 +28,6 @@ if [ -z "$CUSTOM_VENDOR_DIR" ]; then
     export CUSTOM_VENDOR_DIR="$script_dir"
 fi
 
-KIZASHI_TUURU_SCRIPT="external/tuuru/kizashi-no-tuuru/kizashi-no-tuuru.sh"
-
-if [ -f $XKIZASHI_TUURU_SCRIPT ]; then
-    source $KIZASHI_TUURU_SCRIPT
-fi
 
 if [ -z "$TOP" ]; then
     export TOP="$(pwd)"
