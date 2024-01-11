@@ -3,9 +3,9 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/prebuilts/config.mk)
 
 # Bootanimation
-include vendor/kasumi/config/bootanimation.mk
+include vendor/kizashi/config/bootanimation.mk
 
-PRODUCT_BRAND ?= Kasumi
+PRODUCT_BRAND ?= Kizashi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -30,15 +30,15 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/kasumi/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/kasumi/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
+    vendor/kizashi/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/kizashi/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/kizashi/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/kasumi/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/kasumi/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/kizashi/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/kizashi/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/kizashi/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -47,19 +47,19 @@ endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
+    vendor/kizashi/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
 # Lineage-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
+    vendor/kizashi/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
 
 # Copy all Lineage-specific init rc files
-$(foreach f,$(wildcard vendor/kasumi/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/kizashi/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/kizashi/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
 
 # Unlimited google photos backup
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/prebuilt/google/etc/sysconfig/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
+    vendor/kizashi/prebuilt/google/etc/sysconfig/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
 
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
@@ -75,17 +75,17 @@ PRODUCT_COPY_FILES += \
 
 # This is Lineage!
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
+    vendor/kizashi/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
 # Include AOSP audio files
-include vendor/kasumi/config/aosp_audio.mk
+include vendor/kizashi/config/aosp_audio.mk
 
 # Include Lineage audio files
-include vendor/kasumi/config/lineage_audio.mk
+include vendor/kizashi/config/lineage_audio.mk
 
 # Change default notification sound
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -93,12 +93,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
-include vendor/kasumi/config/lineage_sdk_common.mk
+include vendor/kizashi/config/lineage_sdk_common.mk
 endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/kasumi/config/twrp.mk
+include vendor/kizashi/config/twrp.mk
 endif
 
 # Do not include art debug targets
@@ -203,8 +203,8 @@ endif
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kasumi/overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/kasumi/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kizashi/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/kizashi/overlay/common
 
 # Gboard side padding
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -218,13 +218,13 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_VERSION_MAJOR := 1
-PRODUCT_VERSION_MINOR := 4
+PRODUCT_VERSION_MINOR := 0
 PRODUCT_VERSION_MAINTENANCE := 1
-PRODUCT_VERSION_CODENAME := PoPiPa
-PRODUCT_KASUMI_EXTRAVERSION :=
+PRODUCT_VERSION_CODENAME := Relay
+PRODUCT_KIZASHI_EXTRAVERSION :=
 
-PRODUCT_KASUMI_VARIANT :=
-ifeq ($(KASUMI_BUILD_TYPE),gapps)
+PRODUCT_KIZASHI_VARIANT :=
+ifeq ($(KIZASHI_BUILD_TYPE),gapps)
 ifeq ($(TARGET_GAPPS_ARCH),)
 $(warning TARGET_GAPPS_ARCH is not set, attempting to detect arm64 app support)
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
@@ -235,20 +235,20 @@ $(warning arm64 app support is unavailable, setting TARGET_GAPPS_ARCH to arm)
 TARGET_GAPPS_ARCH := arm
 endif
 endif
-PRODUCT_KASUMI_VARIANT := -GApps
+PRODUCT_KIZASHI_VARIANT := -GApps
 $(call inherit-product, vendor/gapps/$(TARGET_GAPPS_ARCH)/$(TARGET_GAPPS_ARCH)-vendor.mk)
 endif
 
-ifeq ($(KASUMI_BUILD_TYPE),auroraoss)
-PRODUCT_KASUMI_VARIANT := -AuroraOSS
+ifeq ($(KIZASHI_BUILD_TYPE),auroraoss)
+PRODUCT_KIZASHI_VARIANT := -AuroraOSS
 endif
 
 # Different if-else statement to simplify setting OTA URL
-ifneq ($(filter gapps auroraoss,$(KASUMI_BUILD_TYPE)),)
-PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://raw.github.com/ProjectKasumi/vendor_kasumiota/kasumi-v1/$(KASUMI_BUILD_TYPE)/{device}.json
-endif
+#ifneq ($(filter gapps auroraoss,$(KIZASHI_BUILD_TYPE)),)
+#PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://raw.github.com/ProjectKizashi/vendor_kizashiota/kizashi-v1/$(KIZASHI_BUILD_TYPE)/{device}.json
+#endif
 
-TARGET_BUILD_VARIANT_ID := $(PRODUCT_KASUMI_EXTRAVERSION)$(PRODUCT_KASUMI_VARIANT)
+TARGET_BUILD_VARIANT_ID := $(PRODUCT_KIZASHI_EXTRAVERSION)$(PRODUCT_KIZASHI_VARIANT)
 
 TARGET_VENDOR_SHOW_MAINTENANCE_VERSION ?= true
 ifeq ($(TARGET_VENDOR_SHOW_MAINTENANCE_VERSION),true)
@@ -347,7 +347,7 @@ else
 endif
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/kasumi/build/target/product/security/lineage
+    vendor/kizashi/build/target/product/security/lineage
 
 -include vendor/materium-priv/keys/keys.mk
 
@@ -376,19 +376,19 @@ ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
 endif
 endif
 
-ifeq ($(KASUMI_SHIP_LAWNCHAIR), true)
+ifeq ($(KIZASHI_SHIP_LAWNCHAIR), true)
     $(call inherit-product, vendor/lawnchair/lawnchair.mk)
 endif
-ifeq ($(KASUMI_INCLUDE_GCGOP), true)
+ifeq ($(KIZASHI_INCLUDE_GCGOP), true)
     $(call inherit-product, $(GCGOP_VENDOR_DIR)/config.mk)
 endif
 ifeq ($(TARGET_NEEDS_LINEAGE_ISFP_PERM), true)
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    vendor/kizashi/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/kasumi/config/partner_gms.mk
+-include vendor/kizashi/config/partner_gms.mk
 
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
@@ -401,4 +401,4 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Fonts
-include vendor/kasumi/config/fonts.mk
+include vendor/kizashi/config/fonts.mk

@@ -15,9 +15,9 @@
 $(call inherit-product, build/target/product/aosp_x86_64.mk)
 $(call inherit-product, build/target/product/gsi_release.mk)
 
-include $(CUSTOM_VENDOR_DIR)/build/target/product/kasumi_generic_target.mk
+include $(CUSTOM_VENDOR_DIR)/build/target/product/kizashi_generic_target.mk
 
-PRODUCT_NAME := kasumi_x86_64
+PRODUCT_NAME := kizashi_x86_64
 
-PRODUCT_SDK_ADDON_NAME := kasumi
+PRODUCT_SDK_ADDON_NAME := kizashi
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

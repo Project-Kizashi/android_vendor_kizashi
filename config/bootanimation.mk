@@ -1,6 +1,6 @@
 # Copyright (C) 2018 The Superior OS Project
 # Copyright (C) 2020 Direwolf Inc for Project Sakura
-# Copyright (C) 2022 Beru Shinsetsu on behalf of Project Kasumi
+# Copyright (C) 2022 Beru Shinsetsu on behalf of Project Kizashi
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -27,7 +27,7 @@ ifeq ($(TARGET_CUSTOM_BOOT_ANIMATION),)
      # pound sign is already filtered out by build system so nothing should
      # go wrong.
      TARGET_BOOT_ANIMATION_RES := $(strip $(TARGET_BOOT_ANIMATION_RES))
-     TARGET_CUSTOM_BOOT_ANIMATION := vendor/kasumi/prebuilt/common/media/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip
+     TARGET_CUSTOM_BOOT_ANIMATION := vendor/kizashi/prebuilt/common/media/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip
 endif
 
 PRODUCT_COPY_FILES += $(TARGET_CUSTOM_BOOT_ANIMATION):$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip

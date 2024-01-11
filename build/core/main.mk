@@ -1,2 +1,2 @@
 # Include LineageOS versions
-include $(TOPDIR)vendor/kasumi/build/core/main_version.mk
+include $(TOPDIR)vendor/kizashi/build/core/main_version.mk

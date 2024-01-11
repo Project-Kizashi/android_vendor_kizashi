@@ -14,11 +14,11 @@
 
 $(call inherit-product, device/google/atv/products/aosp_tv_arm.mk)
 
-include $(CUSTOM_VENDOR_DIR)/build/target/product/kasumi_generic_tv_target.mk
+include $(CUSTOM_VENDOR_DIR)/build/target/product/kizashi_generic_tv_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_NAME := kasumi_tv_arm
+PRODUCT_NAME := kizashi_tv_arm
 
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=

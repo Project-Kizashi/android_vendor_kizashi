@@ -1,5 +1,5 @@
 # Inherit common Lineage stuff
-$(call inherit-product, vendor/kasumi/config/common.mk)
+$(call inherit-product, vendor/kizashi/config/common.mk)
 
 # Inherit Lineage atv device tree
 $(call inherit-product, device/lineage/atv/lineage_atv.mk)
@@ -12,4 +12,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageCustomizer
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/kasumi/overlay/tv
+PRODUCT_PACKAGE_OVERLAYS += vendor/kizashi/overlay/tv

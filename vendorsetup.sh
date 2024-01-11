@@ -28,10 +28,10 @@ if [ -z "$CUSTOM_VENDOR_DIR" ]; then
     export CUSTOM_VENDOR_DIR="$script_dir"
 fi
 
-KASUMI_TUURU_SCRIPT="external/tuuru/kasumi-no-tuuru/kasumi-no-tuuru.sh"
+KIZASHI_TUURU_SCRIPT="external/tuuru/kizashi-no-tuuru/kizashi-no-tuuru.sh"
 
-if [ -f $XKASUMI_TUURU_SCRIPT ]; then
-    source $KASUMI_TUURU_SCRIPT
+if [ -f $XKIZASHI_TUURU_SCRIPT ]; then
+    source $KIZASHI_TUURU_SCRIPT
 fi
 
 if [ -z "$TOP" ]; then
@@ -40,5 +40,5 @@ fi
 
 export CUSTOM_VENDOR_DIR="$(realpath --relative-to="$TOP" "$CUSTOM_VENDOR_DIR")"
 
-export ROM_VERSION="$( (xmlstarlet sel -t -v "/manifest/remote[@name='kasumi']/@revision" "$TOP/.repo/manifests/default.xml" | sed -e 's/refs\/heads\///') || \
+export ROM_VERSION="$( (xmlstarlet sel -t -v "/manifest/remote[@name='kizashi']/@revision" "$TOP/.repo/manifests/default.xml" | sed -e 's/refs\/heads\///') || \
                         (repo branch | grep '^\*' | awk '{ print $2 }') )"

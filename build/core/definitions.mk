@@ -6,7 +6,7 @@ $(if $1,$(firstword $1) $(call uniq,$(filter-out $(firstword $1),$1)))
 endef
 
 # Include board/platform macros
-include vendor/kasumi/build/core/utils.mk
+include vendor/kizashi/build/core/utils.mk
 
 # Include vendor platform definitions
-include vendor/kasumi/build/core/vendor/*.mk
+include vendor/kizashi/build/core/vendor/*.mk

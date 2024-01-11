@@ -1,13 +1,13 @@
 # Permissions for lineage sdk services
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/config/permissions/org.lineageos.audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.audio.xml \
-    vendor/kasumi/config/permissions/org.lineageos.globalactions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.globalactions.xml \
-    vendor/kasumi/config/permissions/org.lineageos.hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.hardware.xml \
-    vendor/kasumi/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.livedisplay.xml \
-    vendor/kasumi/config/permissions/org.lineageos.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.performance.xml \
-    vendor/kasumi/config/permissions/org.lineageos.profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.profiles.xml \
-    vendor/kasumi/config/permissions/org.lineageos.settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.settings.xml \
-    vendor/kasumi/config/permissions/org.lineageos.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.trust.xml
+    vendor/kizashi/config/permissions/org.lineageos.audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.audio.xml \
+    vendor/kizashi/config/permissions/org.lineageos.globalactions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.globalactions.xml \
+    vendor/kizashi/config/permissions/org.lineageos.hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.hardware.xml \
+    vendor/kizashi/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.livedisplay.xml \
+    vendor/kizashi/config/permissions/org.lineageos.performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.performance.xml \
+    vendor/kizashi/config/permissions/org.lineageos.profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.profiles.xml \
+    vendor/kizashi/config/permissions/org.lineageos.settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.settings.xml \
+    vendor/kizashi/config/permissions/org.lineageos.trust.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.trust.xml
 
 # Lineage Platform Library
 PRODUCT_PACKAGES += \

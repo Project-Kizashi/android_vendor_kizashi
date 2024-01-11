@@ -47,4 +47,4 @@ PRODUCT_PACKAGES += \
     Ubuntu-Regular.ttf
 
 PRODUCT_COPY_FILES += \
-    vendor/kasumi/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    vendor/kizashi/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml

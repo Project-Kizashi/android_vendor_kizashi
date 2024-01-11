@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include $(CUSTOM_VENDOR_DIR)/build/target/product/kasumi_generic_car_target.mk
+include $(CUSTOM_VENDOR_DIR)/build/target/product/kizashi_generic_car_target.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_arm64.mk)
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := kasumi_car_arm64
+PRODUCT_NAME := kizashi_car_arm64

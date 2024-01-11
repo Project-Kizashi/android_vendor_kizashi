@@ -1,5 +1,5 @@
 # Inherit common Lineage stuff
-$(call inherit-product, vendor/kasumi/config/common_mobile.mk)
+$(call inherit-product, vendor/kizashi/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 

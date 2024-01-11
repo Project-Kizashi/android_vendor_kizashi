@@ -1,6 +1,6 @@
 # Copyright (C) 2017 Unlegacy-Android
 # Copyright (C) 2017,2020 The LineageOS Project
-# Copyright (C) 2021,2022 Beru Shinsetsu (On behalf of Project Kasumi)
+# Copyright (C) 2021,2022 Beru Shinsetsu (On behalf of Project Kizashi)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 # -----------------------------------------------------------------
 # Lineage OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/Kasumi-$(LINEAGE_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/Kizashi-$(LINEAGE_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
@@ -35,7 +35,7 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET) otatools target-files-package
 	$(hide) $(HOST_OUT)/bin/ota_from_target_files -k vendor/priv/releasekey --block --backup=true $(PRODUCT_OUT)/signed-target_files.zip $(LINEAGE_TARGET_PACKAGE) >&2
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "//          Project Kasumi          //" >&2
+	@echo "//          Project Kizashi          //" >&2
 	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
 	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
@@ -48,7 +48,7 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "//          Project Kasumi          //" >&2
+	@echo "//          Project Kizashi          //" >&2
 	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
 	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
@@ -62,7 +62,7 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "//          Project Kasumi          //" >&2
+	@echo "//          Project Kizashi          //" >&2
 	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
 	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2

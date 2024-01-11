@@ -15,33 +15,33 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/kasumi_arm.mk \
-    $(LOCAL_DIR)/kasumi_arm64.mk \
-    $(LOCAL_DIR)/kasumi_x86.mk \
-    $(LOCAL_DIR)/kasumi_x86_64.mk \
-    $(LOCAL_DIR)/kasumi_arm_ab.mk \
-    $(LOCAL_DIR)/kasumi_arm64_ab.mk \
-    $(LOCAL_DIR)/kasumi_x86_ab.mk \
-    $(LOCAL_DIR)/kasumi_x86_64_ab.mk \
-    $(LOCAL_DIR)/kasumi_tv_arm.mk \
-    $(LOCAL_DIR)/kasumi_tv_arm64.mk \
-    $(LOCAL_DIR)/kasumi_tv_x86.mk \
-    $(LOCAL_DIR)/kasumi_tv_x86_64.mk \
-    $(LOCAL_DIR)/kasumi_car_arm64.mk \
-    $(LOCAL_DIR)/kasumi_car_x86_64.mk
+    $(LOCAL_DIR)/kizashi_arm.mk \
+    $(LOCAL_DIR)/kizashi_arm64.mk \
+    $(LOCAL_DIR)/kizashi_x86.mk \
+    $(LOCAL_DIR)/kizashi_x86_64.mk \
+    $(LOCAL_DIR)/kizashi_arm_ab.mk \
+    $(LOCAL_DIR)/kizashi_arm64_ab.mk \
+    $(LOCAL_DIR)/kizashi_x86_ab.mk \
+    $(LOCAL_DIR)/kizashi_x86_64_ab.mk \
+    $(LOCAL_DIR)/kizashi_tv_arm.mk \
+    $(LOCAL_DIR)/kizashi_tv_arm64.mk \
+    $(LOCAL_DIR)/kizashi_tv_x86.mk \
+    $(LOCAL_DIR)/kizashi_tv_x86_64.mk \
+    $(LOCAL_DIR)/kizashi_car_arm64.mk \
+    $(LOCAL_DIR)/kizashi_car_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    kasumi_arm-userdebug \
-    kasumi_arm64-userdebug \
-    kasumi_x86-userdebug \
-    kasumi_x86_64-userdebug \
-    kasumi_arm_ab-userdebug \
-    kasumi_arm64_ab-userdebug \
-    kasumi_x86_ab-userdebug \
-    kasumi_x86_64_ab-userdebug \
-    kasumi_tv_arm-userdebug \
-    kasumi_tv_arm64-userdebug \
-    kasumi_tv_x86-userdebug \
-    kasumi_tv_x86_64-userdebug \
-    kasumi_car_arm64-userdebug \
-    kasumi_car_x86_64-userdebug
+    kizashi_arm-userdebug \
+    kizashi_arm64-userdebug \
+    kizashi_x86-userdebug \
+    kizashi_x86_64-userdebug \
+    kizashi_arm_ab-userdebug \
+    kizashi_arm64_ab-userdebug \
+    kizashi_x86_ab-userdebug \
+    kizashi_x86_64_ab-userdebug \
+    kizashi_tv_arm-userdebug \
+    kizashi_tv_arm64-userdebug \
+    kizashi_tv_x86-userdebug \
+    kizashi_tv_x86_64-userdebug \
+    kizashi_car_arm64-userdebug \
+    kizashi_car_x86_64-userdebug

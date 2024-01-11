@@ -45,11 +45,11 @@ except ImportError:
 DEBUG = True
 
 custom_local_manifest = ".repo/local_manifests/default.xml"
-custom_default_revision = "kasumi-v1"
+custom_default_revision = "kizashi-v1"
 custom_github_revision = "lineage-18.1"
-custom_dependencies = "kasumi.dependencies"
+custom_dependencies = "kizashi.dependencies"
 org_manifest = "devices"  # leave empty if org is provided in manifest
-org_display = "Kasumi-Devices"  # needed for displaying
+org_display = "Kizashi-Devices"  # needed for displaying
 
 github_auth = None
 

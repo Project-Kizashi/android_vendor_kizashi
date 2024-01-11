@@ -2,9 +2,9 @@
 # Lineage Audio Files
 #
 
-ALARM_PATH := vendor/kasumi/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/kasumi/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/kasumi/prebuilt/common/media/audio/ringtones
+ALARM_PATH := vendor/kizashi/prebuilt/common/media/audio/alarms
+NOTIFICATION_PATH := vendor/kizashi/prebuilt/common/media/audio/notifications
+RINGTONE_PATH := vendor/kizashi/prebuilt/common/media/audio/ringtones
 
 # Alarms
 PRODUCT_COPY_FILES += \

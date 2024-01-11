@@ -15,8 +15,8 @@
 $(call inherit-product, build/target/product/aosp_arm64.mk)
 $(call inherit-product, build/target/product/gsi_release.mk)
 
-include $(CUSTOM_VENDOR_DIR)/build/target/product/kasumi_generic_target.mk
+include $(CUSTOM_VENDOR_DIR)/build/target/product/kizashi_generic_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := kasumi_arm64
+PRODUCT_NAME := kizashi_arm64
