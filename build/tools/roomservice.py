@@ -45,7 +45,7 @@ except ImportError:
 DEBUG = True
 
 custom_local_manifest = ".repo/local_manifests/default.xml"
-custom_default_revision = "kizashi-v1"
+custom_default_revision = "relay"
 custom_github_revision = "lineage-18.1"
 custom_dependencies = "kizashi.dependencies"
 org_manifest = "devices"  # leave empty if org is provided in manifest

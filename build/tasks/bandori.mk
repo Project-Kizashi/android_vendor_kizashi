@@ -17,7 +17,7 @@
 # -----------------------------------------------------------------
 # Lineage OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/Kizashi-$(LINEAGE_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/ProjectKizashi-$(LINEAGE_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
@@ -36,12 +36,9 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET) otatools target-files-package
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
 	@echo "//          Project Kizashi          //" >&2
-	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
-	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
-	@echo "" >&2
 	@echo "To get started, get your custom recovery up and slap this ROM in!" >&2
-	@echo "Based on Project Materium, brought to you by Yuki (@yukiqt) and Beru Kobayashi (@windowz414)." >&2
+	@echo "Based on Project Kasumi, brought to you by PrabhatProxy." >&2
 else
 # Builds that can't be signed must have signature enforcement disabled using the flag above.
 bandori: $(INTERNAL_OTA_PACKAGE_TARGET)
@@ -49,12 +46,9 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
 	@echo "//          Project Kizashi          //" >&2
-	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
-	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
-	@echo "" >&2
 	@echo "To get started, get your custom recovery up and slap this ROM in!" >&2
-	@echo "Based on Project Materium, brought to you by Yuki (@yukiqt) and Beru Kobayashi (@windowz414)." >&2
+	@echo "Based on Project Kasumi, brought to you by PrabhatProxy." >&2
 endif
 else
 # Builds that aren't marked as official aren't required to be signed.
@@ -63,10 +57,7 @@ bandori: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
 	@echo "//          Project Kizashi          //" >&2
-	@echo "// PoPiPa, PiPoPa, PoPiPaPaPiPoPa~! //" >&2
-	@echo "" >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
-	@echo "" >&2
 	@echo "To get started, get your custom recovery up and slap this ROM in!" >&2
-	@echo "Based on Project Materium, brought to you by Yuki (@yukiqt) and Beru Kobayashi (@windowz414)." >&2
+	@echo "Based on Project Kasumi, brought to you by PrabhatProxy." >&2
 endif

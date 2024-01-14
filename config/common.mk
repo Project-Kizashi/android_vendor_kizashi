@@ -219,7 +219,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_VERSION_MAJOR := 1
 PRODUCT_VERSION_MINOR := 0
-PRODUCT_VERSION_MAINTENANCE := 1
+PRODUCT_VERSION_MAINTENANCE := 0
 PRODUCT_VERSION_CODENAME := Relay
 PRODUCT_KIZASHI_EXTRAVERSION :=
 
@@ -235,7 +235,7 @@ $(warning arm64 app support is unavailable, setting TARGET_GAPPS_ARCH to arm)
 TARGET_GAPPS_ARCH := arm
 endif
 endif
-PRODUCT_KIZASHI_VARIANT := -GApps
+PRODUCT_KIZASHI_VARIANT := -Gapps
 $(call inherit-product, vendor/gapps/$(TARGET_GAPPS_ARCH)/$(TARGET_GAPPS_ARCH)-vendor.mk)
 endif
 
@@ -244,9 +244,9 @@ PRODUCT_KIZASHI_VARIANT := -AuroraOSS
 endif
 
 # Different if-else statement to simplify setting OTA URL
-#ifneq ($(filter gapps auroraoss,$(KIZASHI_BUILD_TYPE)),)
-#PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://raw.github.com/ProjectKizashi/vendor_kizashiota/kizashi-v1/$(KIZASHI_BUILD_TYPE)/{device}.json
-#endif
+ifneq ($(filter gapps auroraoss,$(KIZASHI_BUILD_TYPE)),)
+PRODUCT_PROPERTY_OVERRIDES += lineage.updater.uri=https://raw.github.com/Project-Kizashi/OTA/relay/$(KIZASHI_BUILD_TYPE)/{device}.json
+endif
 
 TARGET_BUILD_VARIANT_ID := $(PRODUCT_KIZASHI_EXTRAVERSION)$(PRODUCT_KIZASHI_VARIANT)
 
@@ -318,7 +318,7 @@ endif
 
 ifeq ($(LINEAGE_BUILDTYPE), RELEASE)
     ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-        LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_VERSION_CODENAME)-$(LINEAGE_BUILD)
+        LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(PRODUCT_VERSION_CODENAME)-$(LINEAGE_BUILD)
     else
         ifeq ($(TARGET_BUILD_VARIANT),user)
             ifeq ($(LINEAGE_VERSION_MAINTENANCE),0)
@@ -327,7 +327,7 @@ ifeq ($(LINEAGE_BUILDTYPE), RELEASE)
                 LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(LINEAGE_VERSION_MAINTENANCE)-$(PRODUCT_VERSION_CODENAME)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(LINEAGE_BUILD)
             endif
         else
-            LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_VERSION_CODENAME)-$(LINEAGE_BUILD)
+            LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(PRODUCT_VERSION_CODENAME)-$(LINEAGE_BUILD)
         endif
     endif
 else
@@ -376,9 +376,6 @@ ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
 endif
 endif
 
-ifeq ($(KIZASHI_SHIP_LAWNCHAIR), true)
-    $(call inherit-product, vendor/lawnchair/lawnchair.mk)
-endif
 ifeq ($(KIZASHI_INCLUDE_GCGOP), true)
     $(call inherit-product, $(GCGOP_VENDOR_DIR)/config.mk)
 endif

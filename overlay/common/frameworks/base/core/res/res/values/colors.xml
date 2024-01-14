@@ -15,7 +15,7 @@
     limitations under the License.
 -->
 <resources>
-    <color name="accent_device_default_700">#FF3377</color>
-    <color name="accent_device_default_dark">#FFDDEE</color>
-    <color name="accent_device_default_light">#FF3377</color>
+    <color name="accent_device_default_700">#2B2D42</color>
+    <color name="accent_device_default_dark">#e9ebed</color>
+    <color name="accent_device_default_light">#2B2D42</color>
 </resources>
