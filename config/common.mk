@@ -377,7 +377,7 @@ endif
 endif
 
 ifeq ($(KIZASHI_INCLUDE_GCGOP), true)
-    $(call inherit-product, $(GCGOP_VENDOR_DIR)/config.mk)
+    $(call inherit-product, vendor/gcgop/config.mk)
 endif
 ifeq ($(TARGET_NEEDS_LINEAGE_ISFP_PERM), true)
 PRODUCT_COPY_FILES += \
